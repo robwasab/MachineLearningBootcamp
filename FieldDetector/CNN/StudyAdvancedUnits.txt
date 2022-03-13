@@ -1,0 +1,28 @@
+Studied convolutional neural networks by reading LeCun's seminal paper: http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf
+
+Also went through https://www.deeplearningbook.org/contents/convnets.html
+
+Completed Pytorch tutorials relating to training NNs and CNNs. 
+
+The current architecture used for the capstone uses a convolutional architecture inspired by LeNet 4/5.
+An audio signal is decomposed into its frequency components yielding a 2D signal, essentially an image.
+
+Architecture Description:
+0. 1D Audio -> 2D Image
+1. 2D Conv  -> 1D Signal
+2. Avg Pool -> 1D Signal
+3. ReLU     -> 1D Signal
+4. 1D Conv  -> 1D Signal
+5. Avg Pool -> 1D Signal
+6. ReLU     -> 1D Signal
+7. Full NN  -> SoftMax -> Classification Probability Distribution
+
+Main sources of inspiration from LeNet are:
+* The architecture
+* Using ReLU as the non-linearity
+
+
+While using a simple fully connected neural network yielded similar accuracy (93%) compared the convolutional neural network (94%), the convolutional architecture must ultimately be deployed because it uses drastically less floating point operations. The number of floating point operations is important because the detector will be deployed on an embedded signal processor running in realtime.
+
+The CNN or, time-delay network, is much more amenable to DSP environments where the features are continuous samples in time.
+
