@@ -1,0 +1,9 @@
+The field detector will ultimately be deployed on an embedded signal processor.
+However, for the scope of this project, the detector will be deployed as a
+local Python signal processing program that uses numpy libraries to perform
+digital signal processing and neural network evaluation. This is an intermediate
+step since the final produce must be converted to a C program.
+
+The field detector must run in real time and provide low latency detections in
+order to quickly shut off RF radiation. Therefore, distributed processing via
+cloud and REST apis is not viable. 
